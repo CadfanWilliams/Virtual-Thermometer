@@ -1,0 +1,47 @@
+# Thermometer Service
+
+A temporary Kafka consumer service that acts as a virtual thermometer device, collecting temperature data from a Kafka stream for dashboard visualization.
+
+## Overview
+
+This service listens to a Kafka topic, simulates a thermometer device by consuming temperature events, and provides data collection capabilities for a .NET MVC dashboard application.
+
+## Features
+
+- Kafka stream consumer
+- Temperature data collection
+- Dashboard-ready data format
+- Real-time monitoring
+
+## Getting Started
+
+### Prerequisites
+
+- Kafka broker running
+- .NET runtime (for dashboard integration)
+
+### Installation
+
+1. Clone the repository
+2. Configure Kafka connection settings
+3. Run the service
+
+### Configuration
+
+Set your Kafka broker connection and topic details in the configuration file.
+
+## Usage
+
+The service will automatically begin listening to the configured Kafka topic and collecting temperature data.
+
+## Integration
+
+Data collected by this service can be consumed by a .NET MVC dashboard for real-time temperature visualization.
+
+## Notes
+
+This is a temporary service designed as a prototype for the thermometer device simulation.
+
+## License
+
+[Add your license here]
