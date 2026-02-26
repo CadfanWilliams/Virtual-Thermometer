@@ -7,7 +7,7 @@ namespace Temperature
     class TemperatureReadingGenerator
     {
     public:
-        int interval = 2000;
+        int interval = getenv("INTERVAL") ? std::stoi(getenv("INTERVAL")) : 5000;
         double lastTemperature = 20.0;
         void startGenerator();
         std::string generatePayload();
