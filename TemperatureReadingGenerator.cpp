@@ -6,7 +6,7 @@
 class TemperatureReadingGenerator
 {
 public:
-    int interval = 1000;
+    int interval = 2000;
     double lastTemperature = 24.0;
     void startGenerator()
     {
@@ -29,7 +29,7 @@ public:
     double generateNewTemperature()
     {
         srand(time(0));
-        double change = (rand() % 200 - 100) / 100.0; // random change between -1.0 and 1.0
+        double change = (rand() % 20 - 10) / 100.0; // random change between -0.1 and 0.1
         return lastTemperature + change;
     }
 };

@@ -1,2 +1,6 @@
 .vscode/
 *.out
+main.exe
+main.ilk
+main.obj
+*.pdb
