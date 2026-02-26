@@ -39,7 +39,6 @@ namespace Temperature
 
     double TemperatureReadingGenerator::generateNewTemperature()
     {
-        srand(static_cast<unsigned int>(time(0)));
         double change = (rand() % 20 - 10) / 100.0;
         return lastTemperature + change;
     }
