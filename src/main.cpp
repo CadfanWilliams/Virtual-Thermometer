@@ -6,6 +6,6 @@ using namespace Temperature;
 int main()
 {
     TemperatureReadingGenerator generator;
-    generator.startGenerator();
+    generator.startGenerator("BedroomSensor");
     // TODO send payload to kafka stream
 }

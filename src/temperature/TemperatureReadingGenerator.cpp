@@ -7,17 +7,17 @@
 
 namespace Temperature
 {
-    void TemperatureReadingGenerator::startGenerator()
+    void TemperatureReadingGenerator::startGenerator(std::string sensorname)
     {
         while (true)
         {
             std::this_thread::sleep_for(std::chrono::milliseconds(interval));
-            std::string payload = generatePayload();
+            std::string payload = generatePayload(sensorname);
             std::cout << payload << std::endl;
         }
     }
 
-    std::string TemperatureReadingGenerator::generatePayload()
+    std::string TemperatureReadingGenerator::generatePayload(std::string sensorname)
     {
         double newTemperature = generateNewTemperature();
         auto now = std::chrono::system_clock::now();
@@ -27,7 +27,7 @@ namespace Temperature
         std::strftime(buffer, sizeof(buffer), "%Y-%m-%dT%H:%M:%SZ", std::gmtime(&time));
 
         std::string payload =
-            "{\"sensorid\": \"sensor1\", \"temperature\": " +
+            "{\"sensorid\": \"" + sensorname + "\", \"temperature\": " +
             std::to_string(newTemperature) +
             ", \"unit\": \"C\", \"timestamp\": \"" +
             std::string(buffer) +

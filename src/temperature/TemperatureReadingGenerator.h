@@ -10,7 +10,8 @@ namespace Temperature
         int interval = getenv("INTERVAL") ? std::stoi(getenv("INTERVAL")) : 5000;
         double lastTemperature = 20.0;
         void startGenerator();
-        std::string generatePayload();
+        std::string generatePayload(std::string sensorname);
+        void startGenerator(std::string sensorname);
         double generateNewTemperature();
     };
 }
