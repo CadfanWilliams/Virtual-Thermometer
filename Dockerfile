@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 
 RUN g++ -std=c++17 -O2 -Wall -Wextra -pedantic \
-    main.cpp TemperatureReadingGenerator.cpp \
+    src/main.cpp TemperatureReadingGenerator.cpp \
     -o thermometer
 
 FROM debian:stable-slim
